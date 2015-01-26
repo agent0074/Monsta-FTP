@@ -558,16 +558,16 @@ function displayLoginForm($posted) {
 
 <?php if ($ftpHost == "") { ?>
 <?php echo $lang_ftp_host; ?>:
-<br><input type="text" name="ftp_host" value="<?php echo sanitizeStr($ftp_host); ?>" size="30" class="<?php if ($posted= = 1 && $ftp_host=="") echo "bgFormError"; ?>"> 
-<?php echo $lang_port; ?>: <input type="text" name="ftp_port" value="<?php echo sanitizeStr($ftp_port) ?>" size="3" class="<?php if ($posted= = 1 && $ftp_port=="") echo "bgFormError"; ?>" tabindex="-1"> 
+<br><input type="text" name="ftp_host" value="<?php echo sanitizeStr($ftp_host); ?>" size="30" class="<?php if ($posted== 1 && $ftp_host=="") echo "bgFormError"; ?>">
+<?php echo $lang_port; ?>: <input type="text" name="ftp_port" value="<?php echo sanitizeStr($ftp_port) ?>" size="3" class="<?php if ($posted== 1 && $ftp_port=="") echo "bgFormError"; ?>" tabindex="-1">
 <p>
 <?php } ?>
 
 <?php echo $lang_username; ?>:
-<br><input type="text" name="ftp_user" value="<?php echo sanitizeStr($ftp_user); ?>" class="<?php if ($posted= = 1 && $ftp_user=="") echo "bgFormError"; ?>">
+<br><input type="text" name="ftp_user" value="<?php echo sanitizeStr($ftp_user); ?>" class="<?php if ($posted== 1 && $ftp_user=="") echo "bgFormError"; ?>">
 
 <p><?php echo $lang_password; ?>:
-<br><input type="password" name="ftp_pass" value="<?php echo sanitizeStr($ftp_pass); ?>" class="<?php if ($posted= = 1 && $ftp_pass=="") echo "bgFormError"; ?>" autocomplete="off">
+<br><input type="password" name="ftp_pass" value="<?php echo sanitizeStr($ftp_pass); ?>" class="<?php if ($posted== 1 && $ftp_pass=="") echo "bgFormError"; ?>" autocomplete="off">
 
 <div class="floatLeft">
     <input type="submit" value="<?php echo $lang_btn_login; ?>" id="btnLogin">
@@ -2405,7 +2405,7 @@ function renameFiles() {
         
         // Set vars
         $vars = "&ftpAction=rename&processAction = 1";
-        $onKeyPress = "onkeypress=\"if (event.keyCode= = 13){ processForm('".$vars."'); activateActionButtons(0,0); return false; }\"";
+        $onKeyPress = "onkeypress=\"if (event.keyCode== 13){ processForm('".$vars."'); activateActionButtons(0,0); return false; }\"";
         
         // Display folders
         foreach ($folderArray AS $folder) {
@@ -2577,7 +2577,7 @@ function getChmodNumber($str) {
     $strlen = strlen($str);
     for ($i = 0; $i < $strlen; $i++) {
     
-        if ($i> = 1&&$i<=3)
+        if ($i>= 1&&$i<=3)
             $m = 100;
         if ($i>=4&&$i<=6)
             $m = 10;
@@ -2615,7 +2615,7 @@ function displayChmodFieldset($title, $type, $chmod, $vars) {
 <fieldset class="fieldsetChmod">
 <legend><?php echo $title; ?></legend>
 <?php if ($type == "manual") { ?>
-<input type="text" size="4" name="chmodNum" id="chmodNum" value="<?php echo $chmod; ?>" onkeypress="if (event.keyCode= = 13){ processForm('<?php echo $vars; ?>'); activateActionButtons(0,0); return false;}">
+<input type="text" size="4" name="chmodNum" id="chmodNum" value="<?php echo $chmod; ?>" onkeypress="if (event.keyCode== 13){ processForm('<?php echo $vars; ?>'); activateActionButtons(0,0); return false;}">
 <?php }else{ ?>
 <?php 
     if ($type == "owner")
@@ -3093,7 +3093,7 @@ function newFile() {
         // Display pop-up
         displayPopupOpen(0,$width,$height,0,$title);
         
-        echo "<input type=\"text\" name=\"newFile\" id=\"newFile\" placeholder=\"".$lang_new_file_name."\" onkeypress=\"if (event.keyCode= = 13){ processForm('".$vars."'); return false;}\">";
+        echo "<input type=\"text\" name=\"newFile\" id=\"newFile\" placeholder=\"".$lang_new_file_name."\" onkeypress=\"if (event.keyCode== 13){ processForm('".$vars."'); return false;}\">";
         
         if (is_dir($templates_dir)) {
             
@@ -3266,7 +3266,7 @@ function newFolder() {
         // Display pop-up
         displayPopupOpen(0,$width,$height,0,$title);
         
-        echo "<input type=\"text\" name=\"newFolder\" id=\"newFolder\" placeholder=\"".$lang_new_folder_name."\" onkeypress=\"if (event.keyCode= = 13){ processForm('".$vars."'); return false;}\">";
+        echo "<input type=\"text\" name=\"newFolder\" id=\"newFolder\" placeholder=\"".$lang_new_folder_name."\" onkeypress=\"if (event.keyCode== 13){ processForm('".$vars."'); return false;}\">";
         
         displayPopupClose(0,$vars,1);
     
